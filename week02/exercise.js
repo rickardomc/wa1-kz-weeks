@@ -14,49 +14,32 @@ function Exam(code, name, credits, date, score, laude = false) {
 function ExamList() {
   this.list = [];
 
-  // add
-  this.add = (exam) => {
-    this.list.push(exam);
-  };
+  this.add = (exam) => this.list.push(exam);
 
-  // find
   this.find = (code) => {
-    /*for(const c of this.list) {
-      if(c.code === code) {
-        return c;
-      }
-    }
-    return undefined;*/
     return this.list.filter(course => course.code === code)[0];
   }
+  this.listByDate = () => {
+    return [...this.list].sort((a, b) => { a.date.isAfter(b.date) ? 1 : -1 });
+  }
 
-  // afterDate
+  this.listByScore = () => {
+    return [...this.list].sort((a, b) => { b.score - a.score });
+  }
+
   this.afterDate = (date) => {
     return this.list.filter(course => course.date.isAfter(date));
   }
-
-  // listByDate
-  this.listByDate = () => {
-    return [...this.list].sort((a,b) => (a.date.isAfter(b.date) ? 1 : -1));
-  }
-
-  // listByScore
-  this.listByScore = () => {
-    return [...this.list].sort((a, b) => (b.score - a.score));
-  }
-
-  // average
   this.average = () => {
-    return this.list.reduce((sum, course) => sum + course.score, 0)/this.list.length;
+    return this.list
+      .map(course => course.score)
+      .reduce((accumulator, currentScore, currentIndex, scores) => accumulator + currentScore / scores.length, 0);
   }
 }
 
-const wa1 = new Exam('01abc', 'Web Application I', 6, dayjs('2022-06-07'), 30, true);
-const softeng = new Exam('01xxx', 'Software Engineering I', 6, dayjs('2022-07-02'), 28);
-
-const exams = new ExamList();
-exams.add(wa1);
-exams.add(softeng);
-console.log(exams.find('something'));
-
-//console.log(exams);
+const wa1 = new Exam('01abc', 'Web application 1', 6, dayjs('2022-06-07'), 30, true);
+const se1 = new Exam('01adc', 'Software engineering 1', 6, dayjs('2022-07-02'), 28);
+const examList = new ExamList();
+examList.add(wa1);
+examList.add(se1);
+console.log(examList.average());
