@@ -1,0 +1,15 @@
+aside {
+  background-color: aliceblue;
+}
+.colored-text {
+  color: dimgray;
+  font-style: italic;
+}
+
+#table-head {
+  margin-top: 5px;
+}
+
+#table-head {
+  margin-top: 25px;
+}

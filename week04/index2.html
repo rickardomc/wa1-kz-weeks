@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+  <title>Exams</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">
+          My Exams
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <p class="colored-text col">
+        The table below summarizes my exams in the M.S. degree in Computer Engineering at <a
+          href="https://www.polito.it">Politecnico di Torino</a>
+      </p>
+    </div>
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Exam</th>
+            <th scope="col">Credit</th>
+            <th scope="col">Score</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01/02/2022</td>
+            <td>Computer architectures</td>
+            <td>10</td>
+            <td>21</td>
+            <td><button type="button" class="btn btn-primary">X</button></td>
+          </tr>
+          <tr>
+            <td>15/02/2022</td>
+            <td>Esame2</td>
+            <td>10</td>
+            <td>21</td>
+            <td><button type="button" class="btn btn-primary">X</button></td>
+          </tr>
+          <tr>
+            <td><input type="date"></td>
+            <td><input type="date"></td>
+            <td>
+              <div class="input-group mb-3 col-1">
+                <input type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+              </div>
+            </td>
+            <td>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+              </div>
+            </td>
+            <td><button type="button" class="btn btn-primary">+</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2022 - Web applications I (K-Z)</p>
+  </footer>
+</body>
+
+</html>
