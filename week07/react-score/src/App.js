@@ -13,8 +13,13 @@ const fakeExams = [
 
 function App() {
   const [exams, setExams] = useState(fakeExams);
+
   const deleteExam = (id) => {
     setExams((currExams) => currExams.filter(exam => exam.code !== id));
+  }
+
+  const addExam = (exam) => {
+    setExams((currExams) => [...currExams, exam]);
   }
 
   {
@@ -26,7 +31,7 @@ function App() {
           </Col>
         </Row>
         <Row>
-          <ExamScores exams={exams} deleteExam={deleteExam}></ExamScores>
+          <ExamScores exams={exams} deleteExam={deleteExam} addExam={addExam}></ExamScores>
         </Row>
       </Container>);
   }
